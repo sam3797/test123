@@ -18,5 +18,5 @@ RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-RUN ls -la /app/publish
+RUN ls -la /app
 ENTRYPOINT ["dotnet", "WebApplication1.dll"]
