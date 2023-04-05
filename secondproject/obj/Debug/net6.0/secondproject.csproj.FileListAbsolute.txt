@@ -1,0 +1,15 @@
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.csproj.AssemblyReference.cache
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.AssemblyInfoInputs.cache
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.AssemblyInfo.cs
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.csproj.CoreCompileInputs.cache
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\bin\Debug\net6.0\secondproject.exe
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\bin\Debug\net6.0\secondproject.deps.json
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\bin\Debug\net6.0\secondproject.runtimeconfig.json
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\bin\Debug\net6.0\secondproject.dll
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\bin\Debug\net6.0\secondproject.pdb
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.dll
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\refint\secondproject.dll
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.pdb
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\secondproject.genruntimeconfig.cache
+C:\Users\indhu\source\repos\Multiproject-Sample\secondproject\obj\Debug\net6.0\ref\secondproject.dll
