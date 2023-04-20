@@ -1,41 +1,68 @@
-name: Build job
+#trigger:
+ # branches:
+  #  include:
+   # - master
+  #paths:
+   # include:
+    #- function1
 
-on:
-   push:
-    branches: [ main ]
-env:
-    REGISTRY: ghcr.io
-    IMAGE_NAME: ${{ github.repository }}
+trigger:
+- none
 
-jobs:
-    build-run:
-     runs-on: ubuntu-latest
-     permissions:
-      contents: read
-      packages: write
+resources:
+  repositories:
+  - repository: MultiPrj-Containerize-Poc.git
+    type: git
+    name: demoprj/MultiPrj-Containerize-Poc.git
+    ref: main
+    trigger:
+      branches:
+       include:
+       - master
+      paths:
+       include:
+       - function1
 
-     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+stages:
+- stage: Build
+  displayName: Build Stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      name: Default
+      demand: java
 
-      - name: Log in to the Container registry
-        uses: docker/login-action@v1
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+    - checkout: MultiPrj-Containerize-Poc.git
+      fetchDepth: 1
+      persistCredentials: true
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v1
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+    - task: PowerShell@2
+      displayName: displaying the checkout
+      inputs: 
+          targetType: 'inline'
+          script: |
+           pwd
+           echo "*********"
+           cd $(System.DefaultWorkingDirectory)
+           pwd
+           echo "*********"
+           ls
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          #file: ./helloworld-web/Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}-v${{ github.run_number }}
-          labels: ${{ steps.meta.outputs.labels }}
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet restore'
+      inputs:
+         command: restore
+         projects: '*/.csproj'
+         #restoreArguments: 'p:Configuration=Release'
+         workingDirectory: ./function1
+
+    - task: DotNetCoreCLI@2
+      displayName: 'dotnet publish'
+      inputs:
+         command: publish
+         projects: '*/.csproj'
+         #restoreArguments: 'p:Configuration=Release'
+         workingDirectory: ./function1
+         #arguments: '-r linux-x64 -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)'
