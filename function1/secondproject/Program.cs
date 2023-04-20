@@ -5,25 +5,18 @@
 
         public static void SayHello()
         {
-
-             Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
-       Trace.AutoFlush = true;
-       Trace.Indent();
-       Trace.WriteLine("Entering hello function");
+       Console.WriteLine("Entering Main");
        Console.WriteLine("Hello World.");
-       Trace.WriteLine("Exiting hello function");
-       Trace.Unindent();
+       Console.WriteLine("Exiting Main...");
 
         }
         static void Main(string[] args)
         {
-            Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
-       Trace.AutoFlush = true;
-       Trace.Indent();
-       Trace.WriteLine("Entering Main");
+
+
+       Console.WriteLine("Entering Main");
        Console.WriteLine("Hello World.");
-       Trace.WriteLine("Exiting Main...");
-       Trace.Unindent();
+       Console.WriteLine("Exiting Main...");
         }
 
 
