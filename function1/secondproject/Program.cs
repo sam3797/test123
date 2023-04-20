@@ -22,7 +22,7 @@
        Trace.Indent();
        Trace.WriteLine("Entering Main");
        Console.WriteLine("Hello World.");
-       Trace.WriteLine("Exiting Main");
+       Trace.WriteLine("Exiting Main...");
        Trace.Unindent();
         }
 
